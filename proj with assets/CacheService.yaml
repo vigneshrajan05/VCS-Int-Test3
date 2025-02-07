@@ -1,0 +1,20 @@
+#
+# Copyright Super iPaaS Integration LLC, an IBM Company 2024
+#
+# kind: CacheServiceResult
+# apiVersion: api.webmethods.io/beta
+# metadata:
+#     name: service_cache
+#     version: 1.0
+#     namespace: sample
+#     tags:
+#         - cache
+#         - service
+#         - result
+#         - monitoring
+#         - policy
+# spec:
+#   condition: (${request.headers.test} equals test1) or (${request.query.test} equals test1})
+#   ttl: 4d
+#   enabled: true
+#   maxSize: 32kb
