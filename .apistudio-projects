@@ -1,10 +1,4 @@
 projects:
-  new_full_project:
-    description: E2E testing
-    tags:
-      - asset
-      - dir
-    lastUpdated: 1726143117936
   Studio-Test-Demo:
     description: This is a sample project with APIs, Policies and tests
     tags:
