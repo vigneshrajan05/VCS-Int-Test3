@@ -1,14 +1,1 @@
-projects:
-  Local-1:
-    description: This is a dummy project
-    tags:
-      - api
-      - local
-    lastUpdated: 1738909042223
-  proj with assets:
-    description: ''
-    tags:
-      - assets
-      - tests
-      - apis
-    lastUpdated: 1738909079967
+projects: {}
