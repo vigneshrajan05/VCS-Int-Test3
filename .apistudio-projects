@@ -5,11 +5,6 @@ projects:
       - asset
       - dir
     lastUpdated: 1726143117936
-  CLIProject:
-    description: This is a sample project to test the CLI implementation.
-    tags:
-      - cli
-    lastUpdated: 1738855588586
   Studio-Test-Demo:
     description: This is a sample project with APIs, Policies and tests
     tags:
@@ -22,11 +17,3 @@ projects:
       - apis
       - assets
     lastUpdated: 1738764625957
-  proj-with-tests-and-assets-edit-2:
-    description: >-
-      Basic accessibility support enabled for project creation modals, gateway
-      configuration forms, toast messages, input components and tag components.
-    tags:
-      - api
-      - apigw
-    lastUpdated: 1738841605011
