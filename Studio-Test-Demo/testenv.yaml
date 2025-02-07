@@ -1,0 +1,23 @@
+kind: environment
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: testViki
+  version: '1.0.1'
+  namespace: defaultViki
+  tags:
+    - payEnv
+spec:
+  variables:
+    - key: "petid"
+      value: "13"
+      isSecret: false
+    - key: "apiKey"
+      value: '453-0002837546'
+      isSecret: false
+    - key: "endpoint"
+      value: 'petstore.swagger.io'
+      isSecret: false
+    - key: "code"
+      value: 400
+      isSecret: false
+   

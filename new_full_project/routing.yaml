@@ -1,0 +1,30 @@
+#
+# Copyright Super iPaaS Integration LLC, an IBM Company 2024
+#
+kind: Route
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: "straight-through-routing"
+  version: 1.0
+  namespace: sample
+spec:
+  default-endpoint:
+    $ref: default_endpoint:1.0
+---
+kind: Endpoint
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: default_endpoint
+  version: 1.0
+spec:
+  url: http://localhost:3000/
+  method: GET
+  connectTimeout: 300
+  readTimeout: 200
+  sslConfig:
+    keyStoreAlias: ""
+    keyAlias: ""
+    trustStoreAlias: ""
+  serviceRegistryParameters:
+    - name: ""
+      value: ""
