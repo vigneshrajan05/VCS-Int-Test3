@@ -1,0 +1,28 @@
+kind: test
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: TestPaymentsviki
+  version: 1.0.0
+  tags:
+    - functional
+  namespace: default
+spec:
+  api:
+    $ref: 'cli:getAlias:1.0'
+  environment:
+    $ref: defaultViki:testViki:1.0.1
+  request:
+    - method: GET
+      resource: /alias
+      headers:
+        - key: Content-Type
+          value: application/json
+        - key: X-Gateway-APIKey
+          value: ${apiKey}
+      auth:
+        noauth: true
+      settings:
+        sslVerification: false
+        encodeURL: true
+      assertions:
+        $ref: default:assert:1.0.0

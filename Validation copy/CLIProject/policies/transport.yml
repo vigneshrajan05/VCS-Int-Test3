@@ -1,0 +1,10 @@
+kind: transport
+apiVersion: api.webmethods.io/beta
+metadata:
+    name: transportPolicy
+    version: '1.0'
+    namespace: 'cli'
+spec:
+    protocol:
+        - http
+        - https

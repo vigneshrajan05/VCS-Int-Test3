@@ -1,0 +1,26 @@
+#
+# Copyright Super iPaaS Integration LLC, an IBM Company 2024
+#
+kind: Log
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: log_invocation
+  version: 1.0
+  namespace: sample
+  tags:
+    - log_invocation
+spec:
+  enabled: true
+  logRequestHeaders: true # default value is false
+  logResponseHeaders: true # default value is false
+  logRequestPayload: true # default value is false
+  logResponsePayload: true # default value is false
+  compressPayloads: true # default value is false
+  logGenerationFrequency: always #Other values are 'onfailure' &  'onsuccess'
+  destination:
+    - self 
+    - dev_portals:
+      - devportal 1 #name of the portal instance in the gateway
+    - email:
+      - nas@sag.com
+      - daso@sag.com

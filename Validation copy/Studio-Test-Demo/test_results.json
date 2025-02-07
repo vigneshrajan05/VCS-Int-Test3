@@ -1,0 +1,4 @@
+{
+  "message": "Cannot read properties of undefined (reading 'split')",
+  "detailedMessage": "TypeError: Cannot read properties of undefined (reading 'split')\n    at searchAssetByKind (file:///C:/Users/vmm/AppData/Roaming/nvm/v20.14.0/node_modules/@webMethods/apim-cli/dist/src/helpers/apim/asset-searchByKind-helper.js:13:39)\n    at testProjects (file:///C:/Users/vmm/AppData/Roaming/nvm/v20.14.0/node_modules/@webMethods/apim-cli/dist/src/helpers/apim/test-helper.js:188:12)\n    at handleTestProjects (file:///C:/Users/vmm/AppData/Roaming/nvm/v20.14.0/node_modules/@webMethods/apim-cli/dist/src/actions/helpers/test-action-helper.js:155:31)\n    at Command.testAction (file:///C:/Users/vmm/AppData/Roaming/nvm/v20.14.0/node_modules/@webMethods/apim-cli/dist/src/actions/test-action.js:26:35)"
+}

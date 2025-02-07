@@ -1,0 +1,36 @@
+# #
+# # Copyright Super iPaaS Integration LLC, an IBM Company 2024
+# #
+# kind: ErrorProcessing
+# apiVersion: api.webmethods.io/beta
+# metadata:
+#   name: conditional_error_processing
+#   version: 1.0
+#   namespace: sample
+# spec:
+#   condition: |
+#     "(${response.headers.test} equals test1) or
+#         (${request.headers.test} not-equals ${request.payload.jsonPath[$.customer.name]})"
+#   transformations:
+#     set:
+#       - key: ${response.headers.h2}
+#         value: test4
+#       - key: ${request.query.q2}
+#         value: ${response.payload.jsonPath[$.customer.name]}
+#     setPayload:
+#       content-types:
+#         - application/json: |
+#             {
+#                 "empid":"1"
+#             }
+#         - application/xml: |
+#             <test></test>
+#         - text/plain: |
+#             "This is a plain content"
+#       default-content-type: application/json
+#     namespaces:
+#       - prefix: ps1
+#         URI: http://test.com
+#       - prefix: ps2
+#         URI: http://test2.com
+#     sendNativeError: true

@@ -1,0 +1,13 @@
+kind: Route
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: routing
+  version: 1.0
+  namespace: cli
+  tags:
+    - routing
+    - route
+    - policy
+spec:
+  default-endpoint:
+    $ref: cli:endpoint:1.0

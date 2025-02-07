@@ -1,0 +1,14 @@
+kind: api
+apiVersion: api.webmethods.io/beta
+metadata:
+    name: getAlias
+    version: '1.0'
+    namespace: 'cli'
+    tags: 
+        - cli
+        - apis
+spec:
+    api-spec:
+        $path: ../specs/swagger.json
+    policy-sequence:
+        - $ref: cli:policySeq:1.0
