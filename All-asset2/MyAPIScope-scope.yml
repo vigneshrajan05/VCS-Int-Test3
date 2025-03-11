@@ -1,0 +1,10 @@
+kind: Scope
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: MyAPIScope
+  version: '1.0'
+  tags: []
+  description: ''
+spec:
+  resources: []
+  policy-seq: []
