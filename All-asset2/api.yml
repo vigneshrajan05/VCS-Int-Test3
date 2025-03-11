@@ -1,6 +1,6 @@
 kind: api
- apiVersion: api.webmethods.io/v1
- metadata:
+apiVersion: api.webmethods.io/v1
+metadata:
    name: DasoAPI1
    namespace: dev
    version: 1
@@ -9,7 +9,7 @@ kind: api
      - daso
      - sample
    type: REST
- spec:
+spec:
    mocked: true
    api-spec:
      $path: petstore.yaml
