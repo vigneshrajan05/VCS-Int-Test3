@@ -16,4 +16,4 @@ spec:
   policy-seq:
     - $ref: dev:dev_policies:1.0
   scopes:
-    - $ref: MyAPIScope:1.0
+    - $ref: default:MyAPIScope:1.0
