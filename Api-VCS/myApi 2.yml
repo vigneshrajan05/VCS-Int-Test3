@@ -8,4 +8,4 @@ metadata:
   type: REST
 spec:
   api-spec:
-    $path: ./myApi-spec.yml
+    $path: './myApi 2-spec.yml'
