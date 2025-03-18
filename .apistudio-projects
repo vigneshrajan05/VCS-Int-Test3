@@ -11,3 +11,11 @@ projects:
       - apis
       - assets
     lastUpdated: 1738764625957
+  Api-VCS:
+    description: >-
+      This is a project to test whether api creation via form view is working as
+      expected or not.
+    tags:
+      - api
+      - form-view
+    lastUpdated: 1742300265518
