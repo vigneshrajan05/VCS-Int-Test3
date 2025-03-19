@@ -1,0 +1,11 @@
+kind: api
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: petstore(5)
+  namespace: pet
+  version: '1.0'
+  tags: []
+  type: REST
+spec:
+  api-spec:
+    $path: ./petstore(5)-spec.yml

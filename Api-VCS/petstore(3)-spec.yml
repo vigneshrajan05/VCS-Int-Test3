@@ -1,0 +1,13 @@
+info:
+  obj:
+    name: hello
+servers:
+  - url: https://google.com
+    description: This is a sample description
+    variables:
+      protocol:
+        enum:
+          - http
+          - https
+        default: http
+        description: Defines the transport protocol
