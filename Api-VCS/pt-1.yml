@@ -1,0 +1,11 @@
+kind: api
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: pt-1
+  namespace: dev
+  version: '1.0'
+  tags: []
+  type: REST
+spec:
+  api-spec:
+    $path: pt-1-spec.yml
