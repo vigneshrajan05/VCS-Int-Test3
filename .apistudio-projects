@@ -19,15 +19,3 @@ projects:
       - api
       - form-view
     lastUpdated: 1742300265518
-  testproj3:
-    description: ''
-    tags: []
-    lastUpdated: 1743521999884
-  djflksdjkds:
-    description: ''
-    tags: []
-    lastUpdated: 1743522020820
-  withFilesVCS:
-    description: ''
-    tags: []
-    lastUpdated: 1743522063974
