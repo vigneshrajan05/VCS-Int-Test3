@@ -11,11 +11,11 @@ projects:
       - apis
       - assets
     lastUpdated: 1738764625957
-  All-asset-2:
+  all-asset-test:
     description: >-
       This is a project to test whether api creation via form view is working as
       expected or not.
     tags:
       - api
       - form-view
-    lastUpdated: 1743711432762
+    lastUpdated: 1743746757093
