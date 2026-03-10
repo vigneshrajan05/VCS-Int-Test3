@@ -5,12 +5,14 @@ projects:
       - studio-test
       - demo
     lastUpdated: 1733297875073
+    id: BO56btMB
   All-asset2:
     description: all assets
     tags:
       - apis
       - assets
     lastUpdated: 1738764625957
+    id: QE6eye77
   all-asset-test:
     description: >-
       This is a project to test whether api creation via form view is working as
@@ -19,3 +21,4 @@ projects:
       - api
       - form-view
     lastUpdated: 1743746757093
+    id: 04OMDDB0
