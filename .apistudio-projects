@@ -22,3 +22,12 @@ projects:
       - form-view
     lastUpdated: 1743746757093
     id: 04OMDDB0
+  local-12:
+    id: XhoKcMoH
+    description: this is local project
+    tags:
+      - local
+      - project
+      - test
+      - export
+    lastUpdated: 1780312394296
