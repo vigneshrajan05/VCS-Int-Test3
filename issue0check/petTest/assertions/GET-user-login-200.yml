@@ -1,0 +1,25 @@
+kind: assertion
+apiVersion: api.ibm.com/v1
+metadata:
+  name: GET-user-login-200
+  namespace: issue0check
+  version: '1.0'
+  tags: []
+  description: ''
+spec:
+  - name: Validate the response status code
+    key: responseStatus
+    value: 200
+    action: equals
+    stopOnFail: false
+  - name: Validate content type header
+    key: responseHeaders.content-type
+    value: application/json
+    action: equals
+    stopOnFail: false
+  - name: Validate response schema
+    key: responseBody
+    value:
+      type: string
+    action: validateSchema
+    stopOnFail: false

@@ -1,0 +1,722 @@
+kind: test
+apiVersion: api.ibm.com/v1
+metadata:
+  name: petTest
+  namespace: issue0check
+  version: '1.0'
+  tags: []
+spec:
+  api:
+    $ref: issue0check:Swagger_Petstore_-_OpenAPI_3_0:1.0
+  request:
+    - method: PUT
+      resource: /pet
+      headers:
+        - key: accept
+          value: application/json
+        - key: content-type
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      payload:
+        raw:
+          json: |-
+            {
+              "id": 10,
+              "name": "doggie",
+              "category": {
+                "id": 1,
+                "name": "Dogs"
+              },
+              "photoUrls": [
+                "string"
+              ],
+              "tags": [
+                {
+                  "id": 0,
+                  "name": "string"
+                }
+              ],
+              "status": "available"
+            }
+      parameters: []
+      assertions:
+        $ref: issue0check:PUT-pet-200:1.0
+    - method: PUT
+      resource: /pet
+      headers:
+        - key: accept
+          value: application/json
+        - key: content-type
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      payload:
+        raw:
+          json: |-
+            {
+              "key": "invalid payload"
+            }
+      parameters: []
+      assertions:
+        $ref: issue0check:PUT-pet-400:1.0
+    - method: PUT
+      resource: /pet/invalid
+      headers:
+        - key: accept
+          value: application/json
+        - key: content-type
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      payload:
+        raw:
+          json: |-
+            {
+              "id": 10,
+              "name": "doggie",
+              "category": {
+                "id": 1,
+                "name": "Dogs"
+              },
+              "photoUrls": [
+                "string"
+              ],
+              "tags": [
+                {
+                  "id": 0,
+                  "name": "string"
+                }
+              ],
+              "status": "available"
+            }
+      parameters: []
+      assertions:
+        $ref: issue0check:PUT-pet-invalid-404:1.0
+    - method: POST
+      resource: /pet
+      headers:
+        - key: accept
+          value: application/json
+        - key: content-type
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      payload:
+        raw:
+          json: |-
+            {
+              "id": 10,
+              "name": "doggie",
+              "category": {
+                "id": 1,
+                "name": "Dogs"
+              },
+              "photoUrls": [
+                "string"
+              ],
+              "tags": [
+                {
+                  "id": 0,
+                  "name": "string"
+                }
+              ],
+              "status": "available"
+            }
+      parameters: []
+      assertions:
+        $ref: issue0check:POST-pet-200:1.0
+    - method: POST
+      resource: /pet
+      headers:
+        - key: accept
+          value: application/json
+        - key: content-type
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      payload:
+        raw:
+          json: |-
+            {
+              "key": "invalid payload"
+            }
+      parameters: []
+      assertions:
+        $ref: issue0check:POST-pet-400:1.0
+    - method: GET
+      resource: /pet/findByStatus
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters:
+        - key: status
+          value: available
+      assertions:
+        $ref: issue0check:GET-pet-findByStatus-200:1.0
+    - method: GET
+      resource: /pet/findByStatus
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters:
+        - key: status
+          value: ''
+      assertions:
+        $ref: issue0check:GET-pet-findByStatus-400:1.0
+      payload:
+        raw:
+          json: |-
+            {
+              "key": "invalid payload"
+            }
+    - method: GET
+      resource: /pet/findByTags
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters:
+        - key: tags
+          value:
+            - string
+      assertions:
+        $ref: issue0check:GET-pet-findByTags-200:1.0
+    - method: GET
+      resource: /pet/findByTags
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters:
+        - key: tags
+          value: ''
+      assertions:
+        $ref: issue0check:GET-pet-findByTags-400:1.0
+      payload:
+        raw:
+          json: |-
+            {
+              "key": "invalid payload"
+            }
+    - method: GET
+      resource: /pet/0
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:GET-pet-0-200:1.0
+    - method: GET
+      resource: /pet/0
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:GET-pet-0-400:1.0
+      payload:
+        raw:
+          json: |-
+            {
+              "key": "invalid payload"
+            }
+    - method: GET
+      resource: /pet/0/invalid
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:GET-pet-0-invalid-404:1.0
+    - method: POST
+      resource: /pet/0
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters:
+        - key: name
+          value: string
+        - key: status
+          value: string
+      assertions:
+        $ref: issue0check:POST-pet-0-200:1.0
+    - method: POST
+      resource: /pet/0
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters:
+        - key: name
+          value: ''
+        - key: status
+          value: ''
+      assertions:
+        $ref: issue0check:POST-pet-0-400:1.0
+      payload:
+        raw:
+          json: |-
+            {
+              "key": "invalid payload"
+            }
+    - method: DELETE
+      resource: /pet/0
+      headers:
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+        - key: api_key
+          value: string
+      parameters: []
+      assertions:
+        $ref: issue0check:DELETE-pet-0-200:1.0
+    - method: DELETE
+      resource: /pet/0
+      headers:
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+        - key: api_key
+          value: string
+      parameters: []
+      assertions:
+        $ref: issue0check:DELETE-pet-0-400:1.0
+      payload:
+        raw:
+          json: |-
+            {
+              "key": "invalid payload"
+            }
+    - method: GET
+      resource: /store/inventory
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:GET-store-inventory-200:1.0
+    - method: POST
+      resource: /store/order
+      headers:
+        - key: accept
+          value: application/json
+        - key: content-type
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      payload:
+        raw:
+          json: |-
+            {
+              "id": 10,
+              "petId": 198772,
+              "quantity": 7,
+              "shipDate": "2019-08-24T14:15:22Z",
+              "status": "approved",
+              "complete": true
+            }
+      parameters: []
+      assertions:
+        $ref: issue0check:POST-store-order-200:1.0
+    - method: POST
+      resource: /store/order
+      headers:
+        - key: accept
+          value: application/json
+        - key: content-type
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      payload:
+        raw:
+          json: |-
+            {
+              "key": "invalid payload"
+            }
+      parameters: []
+      assertions:
+        $ref: issue0check:POST-store-order-400:1.0
+    - method: GET
+      resource: /store/order/0
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:GET-store-order-0-200:1.0
+    - method: GET
+      resource: /store/order/0
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:GET-store-order-0-400:1.0
+      payload:
+        raw:
+          json: |-
+            {
+              "key": "invalid payload"
+            }
+    - method: GET
+      resource: /store/order/0/invalid
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:GET-store-order-0-invalid-404:1.0
+    - method: DELETE
+      resource: /store/order/0
+      headers:
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:DELETE-store-order-0-200:1.0
+    - method: DELETE
+      resource: /store/order/0
+      headers:
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:DELETE-store-order-0-400:1.0
+      payload:
+        raw:
+          json: |-
+            {
+              "key": "invalid payload"
+            }
+    - method: DELETE
+      resource: /store/order/0/invalid
+      headers:
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:DELETE-store-order-0-invalid-404:1.0
+    - method: POST
+      resource: /user
+      headers:
+        - key: accept
+          value: application/json
+        - key: content-type
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      payload:
+        raw:
+          json: |-
+            {
+              "id": 10,
+              "username": "theUser",
+              "firstName": "John",
+              "lastName": "James",
+              "email": "john@email.com",
+              "password": "12345",
+              "phone": "12345",
+              "userStatus": 1
+            }
+      parameters: []
+      assertions:
+        $ref: issue0check:POST-user-200:1.0
+    - method: POST
+      resource: /user/createWithList
+      headers:
+        - key: accept
+          value: application/json
+        - key: content-type
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      payload:
+        raw:
+          json: |-
+            [
+              {
+                "id": 10,
+                "username": "theUser",
+                "firstName": "John",
+                "lastName": "James",
+                "email": "john@email.com",
+                "password": "12345",
+                "phone": "12345",
+                "userStatus": 1
+              }
+            ]
+      parameters: []
+      assertions:
+        $ref: issue0check:POST-user-createWithList-200:1.0
+    - method: GET
+      resource: /user/login
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters:
+        - key: username
+          value: string
+        - key: password
+          value: string
+      assertions:
+        $ref: issue0check:GET-user-login-200:1.0
+    - method: GET
+      resource: /user/login
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters:
+        - key: username
+          value: ''
+        - key: password
+          value: ''
+      assertions:
+        $ref: issue0check:GET-user-login-400:1.0
+      payload:
+        raw:
+          json: |-
+            {
+              "key": "invalid payload"
+            }
+    - method: GET
+      resource: /user/logout
+      headers:
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:GET-user-logout-200:1.0
+    - method: GET
+      resource: /user/string
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:GET-user-string-200:1.0
+    - method: GET
+      resource: /user/string
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:GET-user-string-400:1.0
+      payload:
+        raw:
+          json: |-
+            {
+              "key": "invalid payload"
+            }
+    - method: GET
+      resource: /user/string/invalid
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:GET-user-string-invalid-404:1.0
+    - method: PUT
+      resource: /user/string
+      headers:
+        - key: content-type
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      payload:
+        raw:
+          json: |-
+            {
+              "id": 10,
+              "username": "theUser",
+              "firstName": "John",
+              "lastName": "James",
+              "email": "john@email.com",
+              "password": "12345",
+              "phone": "12345",
+              "userStatus": 1
+            }
+      parameters: []
+      assertions:
+        $ref: issue0check:PUT-user-string-200:1.0
+    - method: PUT
+      resource: /user/string
+      headers:
+        - key: content-type
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      payload:
+        raw:
+          json: |-
+            {
+              "key": "invalid payload"
+            }
+      parameters: []
+      assertions:
+        $ref: issue0check:PUT-user-string-400:1.0
+    - method: PUT
+      resource: /user/string/invalid
+      headers:
+        - key: content-type
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      payload:
+        raw:
+          json: |-
+            {
+              "id": 10,
+              "username": "theUser",
+              "firstName": "John",
+              "lastName": "James",
+              "email": "john@email.com",
+              "password": "12345",
+              "phone": "12345",
+              "userStatus": 1
+            }
+      parameters: []
+      assertions:
+        $ref: issue0check:PUT-user-string-invalid-404:1.0
+    - method: DELETE
+      resource: /user/string
+      headers:
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:DELETE-user-string-200:1.0
+    - method: DELETE
+      resource: /user/string
+      headers:
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:DELETE-user-string-400:1.0
+      payload:
+        raw:
+          json: |-
+            {
+              "key": "invalid payload"
+            }
+    - method: DELETE
+      resource: /user/string/invalid
+      headers:
+        - key: X-IBM-Client-Id
+          value: ${X-IBM-Client-Id_value}
+        - key: X-IBM-Client-Secret
+          value: ${X-IBM-Client-Secret_value}
+      parameters: []
+      assertions:
+        $ref: issue0check:DELETE-user-string-invalid-404:1.0
+  environment:
+    $ref: issue0check:petTest-1_0-environment:1.0

@@ -1,0 +1,62 @@
+kind: assertion
+apiVersion: api.ibm.com/v1
+metadata:
+  name: GET-pet-findByStatus-200
+  namespace: issue0check
+  version: '1.0'
+  tags: []
+  description: ''
+spec:
+  - name: Validate the response status code
+    key: responseStatus
+    value: 200
+    action: equals
+    stopOnFail: false
+  - name: Validate content type header
+    key: responseHeaders.content-type
+    value: application/json
+    action: equals
+    stopOnFail: false
+  - name: Validate response schema
+    key: responseBody
+    value:
+      type: array
+      items:
+        required:
+          - name
+          - photoUrls
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+          category:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+          photoUrls:
+            type: array
+            items:
+              type: string
+          tags:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+          status:
+            type: string
+            description: pet status in the store
+            enum:
+              - available
+              - pending
+              - sold
+    action: validateSchema
+    stopOnFail: false

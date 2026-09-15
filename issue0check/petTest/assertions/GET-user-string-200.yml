@@ -1,0 +1,43 @@
+kind: assertion
+apiVersion: api.ibm.com/v1
+metadata:
+  name: GET-user-string-200
+  namespace: issue0check
+  version: '1.0'
+  tags: []
+  description: ''
+spec:
+  - name: Validate the response status code
+    key: responseStatus
+    value: 200
+    action: equals
+    stopOnFail: false
+  - name: Validate content type header
+    key: responseHeaders.content-type
+    value: application/json
+    action: equals
+    stopOnFail: false
+  - name: Validate response schema
+    key: responseBody
+    value:
+      type: object
+      properties:
+        id:
+          type: integer
+        username:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        phone:
+          type: string
+        userStatus:
+          type: integer
+          description: User Status
+    action: validateSchema
+    stopOnFail: false

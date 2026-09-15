@@ -1,0 +1,13 @@
+kind: API
+apiVersion: api.ibm.com/v1
+metadata:
+  name: Swagger_Petstore_-_OpenAPI_3_0
+  version: '1.0'
+  namespace: issue0check
+  tags: []
+  type: REST
+spec:
+  api-spec:
+    $path: ./swagger_petstore_-_openapi_3_0-spec.json
+  policy-sequence:
+    - $ref: free-flow-vcs:nano-gw-policy:1.0

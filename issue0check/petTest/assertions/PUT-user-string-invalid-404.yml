@@ -1,0 +1,14 @@
+kind: assertion
+apiVersion: api.ibm.com/v1
+metadata:
+  name: PUT-user-string-invalid-404
+  namespace: issue0check
+  version: '1.0'
+  tags: []
+  description: ''
+spec:
+  - name: Validate the response status code
+    key: responseStatus
+    value: 404
+    action: equals
+    stopOnFail: false

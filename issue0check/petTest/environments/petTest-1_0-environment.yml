@@ -1,0 +1,15 @@
+kind: environment
+apiVersion: api.ibm.com/v1
+metadata:
+  name: petTest-1_0-environment
+  namespace: issue0check
+  version: '1.0'
+  tags: []
+spec:
+  variables:
+    - key: X-IBM-Client-Id_value
+      isSecret: true
+      value: ''
+    - key: X-IBM-Client-Secret_value
+      isSecret: true
+      value: ''
