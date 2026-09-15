@@ -31,11 +31,6 @@ projects:
       - test
       - export
     lastUpdated: 1780312394296
-  test-3:
-    id: DyBBMmTC
-    description: ''
-    tags: []
-    lastUpdated: 1788520032142
   issue0check:
     id: g467WEMh
     description: some random desc
